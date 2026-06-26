@@ -5,260 +5,116 @@
     font-family: Arial, sans-serif;
 }
 
+/* 
+   DIGITAL SCHOOL CLINIC SYSTEM
+ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
 /* HOME PAGE */
-.home-body {
-    background: linear-gradient(to right, #dbeafe, #eff6ff);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.home-body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d6efd,#20c997);
+    padding:30px;
 }
 
-.hero-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.hero-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
 }
 
-.hero-card {
-    background: white;
-    width: 90%;
-    max-width: 700px;
-    text-align: center;
-    padding: 50px 35px;
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.hero-card{
+    width:100%;
+    max-width:1000px;
+    background:white;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
-.hero-card h1 {
-    font-size: 34px;
-    color: #0d3b66;
-    margin-bottom: 20px;
+.hero-card h1{
+    color:#0d6efd;
+    font-size:38px;
+    margin-bottom:20px;
 }
 
-.hero-card p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.hero-card p{
+    color:#666;
+    font-size:18px;
+    margin-bottom:40px;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+/* Portal Cards */
+
+.portal-buttons{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
 }
 
-.btn {
-    display: inline-block;
-    background: #0d6efd;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: 0.3s;
+.portal-btn{
+    width:320px;
+    text-decoration:none;
+    background:#ffffff;
+    color:#333;
+    padding:35px;
+    border-radius:18px;
+    border:3px solid #e9ecef;
+    transition:.3s;
 }
 
-.btn:hover {
-    background: #0b5ed7;
+.portal-btn:hover{
+    transform:translateY(-10px);
+    border-color:#0d6efd;
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
 }
 
-.btn-outline {
-    background: white;
-    color: #0d6efd;
-    border: 2px solid #0d6efd;
+.portal-btn{
+    font-size:55px;
 }
 
-.btn-outline:hover {
-    background: #0d6efd;
-    color: white;
+.portal-btn h3{
+    color:#0d6efd;
+    margin:20px 0 10px;
 }
 
-/* AUTH PAGES */
-.auth-body {
-    background: linear-gradient(to right, #dbeafe, #eff6ff);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.portal-btn p{
+    font-size:15px;
+    color:#666;
+    line-height:1.6;
 }
 
-.auth-container {
-    background: white;
-    width: 400px;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    text-align: center;
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero-card{
+    padding:30px;
 }
 
-.auth-container h2 {
-    margin-bottom: 10px;
-    color: #0d3b66;
+.hero-card h1{
+    font-size:28px;
 }
 
-.auth-container p {
-    margin-bottom: 20px;
-    color: #555;
+.portal-btn{
+    width:100%;
 }
 
-.auth-container form {
-    display: flex;
-    flex-direction: column;
 }
 
-.auth-container input {
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-.auth-container button {
-    background: #0d6efd;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.auth-container button:hover {
-    background: #0b5ed7;
-}
-
-.auth-links {
-    margin-top: 15px;
-}
-
-.auth-links a {
-    color: #0d6efd;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.auth-links a:hover {
-    text-decoration: underline;
-}
-
-.alert {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-.alert.success {
-    background: #d1e7dd;
-    color: #0f5132;
-}
-
-.alert.danger {
-    background: #f8d7da;
-    color: #842029;
-}
-
-/* DASHBOARD */
-.dashboard-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-}
-
-.dashboard-container {
-    display: flex;
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 240px;
-    background: #0d3b66;
-    color: white;
-    padding: 25px 20px;
-}
-
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 24px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 18px 0;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.sidebar ul li a:hover {
-    background: #145da0;
-}
-
-.dashboard-main {
-    flex: 1;
-    padding: 30px;
-}
-
-.dashboard-header {
-    background: white;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-}
-
-.dashboard-header h1 {
-    color: #0d3b66;
-    margin-bottom: 8px;
-}
-
-.dashboard-header p {
-    color: #555;
-}
-
-.dashboard-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    color: #0d3b66;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #555;
-    line-height: 1.5;
-}
