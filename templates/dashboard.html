@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Clinic System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-body">
 
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Clinic System</h2>
+            <ul>
+                <li><a href="/dashboard">🏠 Dashboard</a></li>
+                <li><a href="#">📋 Student Records</a></li>
+                <li><a href="#">🩺 Clinic Visits</a></li>
+                <li><a href="#">💊 Medicine Inventory</a></li>
+                <li><a href="#">📊 Reports</a></li>
+                <li><a href="/logout">🚪 Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Welcome, {{ fullname }}!</h1>
+                <p>Student Number: {{ student_number }}</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Student Records</h3>
+                    <p>Manage student health and profile records.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Clinic Visits</h3>
+                    <p>Track consultations, complaints, and treatments.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Medicine Inventory</h3>
+                    <p>Monitor available medicines and supplies.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Reports</h3>
+                    <p>Generate summaries and clinic statistics.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
