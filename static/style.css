@@ -253,6 +253,75 @@ body{
     color:#991b1b;
 }
 
+/* ==========================
+   AUTHIGATION LINKS
+========================== */
+
+.auth-links{
+    margin-top:25px;
+    text-align:center;
+}
+
+.auth-links a{
+    display:inline-block;
+    margin:8px 0;
+    padding:10px 18px;
+    text-decoration:none;
+    color:#0d6efd;
+    font-weight:600;
+    border:2px solid #0d6efd;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.auth-links a:hover{
+    background:#0d6efd;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.auth-links p{
+    margin:15px 0;
+    color:#555;
+}
+
+.auth-links p a{
+    padding:0;
+    border:none;
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+.auth-links p a:hover{
+    background:none;
+    color:#084298;
+    transform:none;
+    text-decoration:underline;
+}
+
+/* ==========================
+   STUDENT PORTAL
+========================== */
+
+.auth-links{
+    margin-top:25px;
+    text-align:center;
+}
+
+.auth-links a{
+    display:inline-block;
+    margin:8px 0;
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.auth-links a:hover{
+    color:#084298;
+    text-decoration:underline;
+}
+
 /* Mobile */
 
 @media(max-width:500px){
