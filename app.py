@@ -33,6 +33,17 @@ def home():
     return render_template("home.html")
 
 
+# -------------------------
+# Student Portal
+# -------------------------
+@app.route("/student")
+def student_portal():
+    return render_template("student_portal.html")
+
+
+# -------------------------
+# Login
+# -------------------------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -43,7 +54,7 @@ def login():
 
         for user in users:
             if user["student_number"] == student_number and user["password"] == password:
-                # Save user info in session
+
                 session["student_number"] = user["student_number"]
                 session["fullname"] = user["fullname"]
 
@@ -56,6 +67,9 @@ def login():
     return render_template("login.html")
 
 
+# -------------------------
+# Sign Up
+# -------------------------
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -67,7 +81,7 @@ def signup():
 
         users = load_users()
 
-        # Check if student number already exists
+        # Check duplicate student number
         for user in users:
             if user["student_number"] == student_number:
                 flash("Student number already registered.", "danger")
@@ -93,6 +107,9 @@ def signup():
     return render_template("signup.html")
 
 
+# -------------------------
+# Forgot Password
+# -------------------------
 @app.route("/forgot_password", methods=["GET", "POST"])
 def forgot_password():
     if request.method == "POST":
@@ -113,13 +130,16 @@ def forgot_password():
             save_users(users)
             flash("Password updated successfully. You can now log in.", "success")
             return redirect(url_for("login"))
-        else:
-            flash("Account not found. Check your student number and email.", "danger")
-            return redirect(url_for("forgot_password"))
+
+        flash("Account not found. Check your student number and email.", "danger")
+        return redirect(url_for("forgot_password"))
 
     return render_template("forgot_password.html")
 
 
+# -------------------------
+# Student Dashboard
+# -------------------------
 @app.route("/dashboard")
 def dashboard():
     if "student_number" not in session:
@@ -131,10 +151,11 @@ def dashboard():
         fullname=session.get("fullname"),
         student_number=session.get("student_number")
     )
-@app.route("/student")
-def student_portal():
-    return render_template("student_portal.html")
 
+
+# -------------------------
+# Logout
+# -------------------------
 @app.route("/logout")
 def logout():
     session.clear()
