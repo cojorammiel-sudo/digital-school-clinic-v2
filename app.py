@@ -131,7 +131,9 @@ def dashboard():
         fullname=session.get("fullname"),
         student_number=session.get("student_number")
     )
-
+@app.route("/student")
+def student_portal():
+    return render_template("student_portal.html")
 
 @app.route("/logout")
 def logout():
