@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 import json
 import os
 
@@ -43,8 +43,12 @@ def login():
 
         for user in users:
             if user["student_number"] == student_number and user["password"] == password:
+                # Save user info in session
+                session["student_number"] = user["student_number"]
+                session["fullname"] = user["fullname"]
+
                 flash("Login successful!", "success")
-                return redirect(url_for("home"))   # later dashboard na dito
+                return redirect(url_for("dashboard"))
 
         flash("Invalid student number or password.", "danger")
         return redirect(url_for("login"))
@@ -114,6 +118,26 @@ def forgot_password():
             return redirect(url_for("forgot_password"))
 
     return render_template("forgot_password.html")
+
+
+@app.route("/dashboard")
+def dashboard():
+    if "student_number" not in session:
+        flash("Please log in first.", "danger")
+        return redirect(url_for("login"))
+
+    return render_template(
+        "dashboard.html",
+        fullname=session.get("fullname"),
+        student_number=session.get("student_number")
+    )
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("You have been logged out.", "success")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
