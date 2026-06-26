@@ -3,55 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Clinic System</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="dashboard-body">
 
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Clinic System</h2>
-            <ul>
-                <li><a href="/dashboard">🏠 Dashboard</a></li>
-                <li><a href="#">📋 Student Records</a></li>
-                <li><a href="#">🩺 Clinic Visits</a></li>
-                <li><a href="#">💊 Medicine Inventory</a></li>
-                <li><a href="#">📊 Reports</a></li>
-                <li><a href="/logout">🚪 Logout</a></li>
-            </ul>
-        </aside>
+<div class="dashboard">
 
-        <!-- Main Content -->
-        <main class="dashboard-main">
-            <div class="dashboard-header">
-                <h1>Welcome, {{ fullname }}!</h1>
-                <p>Student Number: {{ student_number }}</p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>🏥 Clinic System</h2>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+
+            <li><a href="#">🪪 My Profile</a></li>
+
+            <li><a href="#">🩺 Medical Record</a></li>
+
+            <li><a href="#">📅 Visit History</a></li>
+
+            <li><a href="#">📢 Announcements</a></li>
+
+            <li><a href="/logout">🚪 Logout</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="welcome-card">
+
+            <h1>Welcome, {{ fullname }} 👋</h1>
+
+            <p>
+                Student Number:
+                <strong>{{ student_number }}</strong>
+            </p>
+
+            <p>
+                Welcome to the Digital School Clinic Record Management System.
+            </p>
+
+        </div>
+
+        <!-- Quick Health Summary -->
+        <div class="summary-grid">
+
+            <div class="summary-card">
+                <h3>🩸 Blood Type</h3>
+                <p>Not Available</p>
             </div>
 
-            <div class="dashboard-cards">
-                <div class="card">
-                    <h3>Student Records</h3>
-                    <p>Manage student health and profile records.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Clinic Visits</h3>
-                    <p>Track consultations, complaints, and treatments.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Medicine Inventory</h3>
-                    <p>Monitor available medicines and supplies.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Reports</h3>
-                    <p>Generate summaries and clinic statistics.</p>
-                </div>
+            <div class="summary-card">
+                <h3>📅 Last Visit</h3>
+                <p>No Record</p>
             </div>
-        </main>
-    </div>
+
+            <div class="summary-card">
+                <h3>❤️ Health Status</h3>
+                <p>Healthy</p>
+            </div>
+
+        </div>
+
+        <!-- Features -->
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h2>🪪 My Profile</h2>
+                <p>View your personal information.</p>
+            </div>
+
+            <div class="feature-card">
+                <h2>🩺 Medical Record</h2>
+                <p>View your medical records.</p>
+            </div>
+
+            <div class="feature-card">
+                <h2>📅 Clinic Visit History</h2>
+                <p>See all your clinic visits.</p>
+            </div>
+
+            <div class="feature-card">
+                <h2>📢 Announcements</h2>
+                <p>Latest updates from the clinic.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
 
 </body>
 </html>
