@@ -118,3 +118,151 @@ body{
 
 }
 
+
+
+/* ==========================
+   AUTH PAGES
+========================== */
+
+.auth-body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d6efd,#20c997);
+    padding:30px;
+}
+
+.auth-container{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.auth-container h2{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:10px;
+    font-size:32px;
+}
+
+.auth-container p{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* Labels */
+
+.auth-container label{
+    display:block;
+    margin-bottom:8px;
+    margin-top:18px;
+    color:#333;
+    font-weight:bold;
+}
+
+/* Inputs */
+
+.auth-container input{
+    width:100%;
+    padding:14px;
+    border:2px solid #dcdcdc;
+    border-radius:10px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.auth-container input:focus{
+    outline:none;
+    border-color:#0d6efd;
+}
+
+/* Buttons */
+
+.btn{
+    width:100%;
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#0d6efd;
+    color:white;
+    padding:14px;
+    margin-top:25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0957cc;
+}
+
+/* Secondary Button */
+
+.btn-outline{
+    background:white;
+    color:#0d6efd;
+    border:2px solid #0d6efd;
+}
+
+.btn-outline:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+/* Links */
+
+.auth-links{
+    text-align:center;
+    margin-top:20px;
+}
+
+.auth-links a{
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.auth-links a:hover{
+    text-decoration:underline;
+}
+
+/* Flash Messages */
+
+.flash{
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.flash.success{
+    background:#d1fae5;
+    color:#065f46;
+}
+
+.flash.danger{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* Mobile */
+
+@media(max-width:500px){
+
+.auth-container{
+    padding:30px 25px;
+}
+
+.auth-container h2{
+    font-size:26px;
+}
+
+}
